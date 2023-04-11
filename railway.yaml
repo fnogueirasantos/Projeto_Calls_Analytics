@@ -1,0 +1,9 @@
+version: "1"
+name: app
+services:
+  - name: app
+    env:
+      - key: PORT
+        value: "3000"
+    command: wave run app.py
+    port: $PORT
