@@ -1,4 +1,4 @@
-from h2o_wave import main, app, Q
+from h2o_wave import site, ui, Q, main, data, app
 
 from page1 import build_page01
 from page2 import build_page02
