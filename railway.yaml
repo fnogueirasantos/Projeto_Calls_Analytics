@@ -5,5 +5,5 @@ services:
     env:
       - key: PORT
         value: "3000"
-    command: wave run app.py
+    command: wave run app
     port: $PORT
