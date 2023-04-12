@@ -9,7 +9,7 @@ from common import global_nav
 async def build_page01(q: Q):  
     q.page['meta'] = ui.meta_card(box='', layouts=[
         ui.layout(
-            #breakpoint='xs',
+            breakpoint='xs',
             #min_width='800px',
             zones=[
                 ui.zone('header', size='65px'),
