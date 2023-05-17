@@ -8,7 +8,7 @@ import datetime
 
 def importa_dados():
     df = pd.read_csv("dados.csv", encoding='utf-8', sep=';')
-    df = df.query('Year >= 2019')
+    df = df.query('Year >= 2021')
     df = df.groupby(['Call_Date','Team','Category', 'Module', 'Channel_Origin', 'Day_week','Month','Year']).agg({'Call_Id' : ['count'],
                                                                                             'Wait_Time' : ['mean'],
                                                                                             'Time_Resolution' : ['mean']},
