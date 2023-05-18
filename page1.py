@@ -51,14 +51,14 @@ async def build_page01(q: Q):
     df.rename(columns={'Call_Id_count':'Quantity'}, inplace=True)
     # Barplot  
     q.page['bar_plot'] = ui.plot_card(box=ui.box('top', order=3, width='700px'),
-											    title = f'Totally Call By {q.client.filtro}',
-											    data = data(fields = df.columns.tolist(), rows = df.values.tolist()),
-											    plot = ui.plot(
-                                                marks = [ui.mark(type = 'interval',
-														x = f'={q.client.filtro}',
-														y = '=Quantity',                                                     
-														#color = f'={q.client.filtro}'
-                                                        )],
+        title = f'Totally Call By {q.client.filtro}',
+        data = data(fields = df.columns.tolist(), rows = df.values.tolist()),
+        plot = ui.plot(
+            marks = [ui.mark(type = 'interval',
+                x = f'={q.client.filtro}',
+                y = '=Quantity',
+                #color = f'={q.client.filtro}'
+                )],
              )
     )
     
