@@ -10,9 +10,7 @@ def importa_dados():
     df = pd.read_csv("dados.csv", encoding='utf-8', sep=';')
     df = df.query('Year >= 2021')
     df = df.groupby(['Call_Date','Team','Category', 'Module', 'Channel_Origin', 'Day_week','Month','Year']).agg({'Call_Id' : ['count'],
-                                                                                            'Wait_Time' : ['mean'],
-                                                                                            'Time_Resolution' : ['mean']},
-                                                                                                    axis=1)
+        'Wait_Time' : ['mean'],'Time_Resolution' : ['mean']},axis=1)
     df.columns = [
     '_'.join(col).rstrip('_') for col in df.columns.values
     ]
@@ -25,9 +23,7 @@ def dados_boxplot():
     df = pd.read_csv("dados.csv", encoding='utf-8', sep=';')
     df = df.query('Year >= 2019')
     df = df.groupby(['Call_Date','Team','Category', 'Module', 'Channel_Origin', 'Day_week','Month','Year']).agg({'Call_Id' : ['count'],
-                                                                                            'Wait_Time' : ['sum'],
-                                                                                            'Time_Resolution' : ['sum']},
-                                                                                                    axis=1)
+        'Wait_Time' : ['sum'],'Time_Resolution' : ['sum']},axis=1)
     df.columns = [
     '_'.join(col).rstrip('_') for col in df.columns.values
     ]
